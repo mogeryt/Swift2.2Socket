@@ -41,7 +41,7 @@ func testtcpclient(){
             //读取数据
             let data=client.read(1024*10)
             if let d=data{
-                if let str=String(bytes: d, encoding: String.Encoding.utf8){
+                if let str=NSString(bytes: d, encoding: NSUTF8StringEncoding){
                     print(str)
                 }
             }
@@ -82,7 +82,7 @@ func testudpserver(){
             var (data,remoteip,remoteport)=server.recv(1024)
             print("recive")
             if let d=data{
-                if let str=String(bytes: d, encoding: String.Encoding.utf8){
+                if let str=NSString(bytes: d, encoding: NSUTF8StringEncoding){
                     print(str)
                 }
             }
@@ -109,7 +109,7 @@ func testudpBroadcastserver(){
             let (data,remoteip,remoteport)=server.recv(1024)
             print("recive\(remoteip);\(remoteport)")
             if let d=data{
-                if let str=String(bytes: d, encoding: String.Encoding.utf8){
+                if let str=NSString(bytes: d, encoding: NSUTF8StringEncoding){
                     print(str)
                 }
             }
