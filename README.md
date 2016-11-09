@@ -60,7 +60,7 @@ if success {
         //读取数据
         var data = client.read(1024*10)
         if let d = data {
-            if let str = String.stringWithBytes(d, length: d.count, encoding: NSUTF8StringEncoding){
+            if let str = NSString(bytes: d, length: d.count, encoding: NSUTF8StringEncoding){
                 println(str)
             }
         }
